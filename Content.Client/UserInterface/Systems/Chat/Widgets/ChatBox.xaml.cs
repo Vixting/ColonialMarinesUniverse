@@ -36,6 +36,7 @@ public partial class ChatBox : UIWidget
     public readonly Queue<RepeatedMessage> RepeatQueue = new();
     // RMC14
     private readonly HashSet<string> _whitelist = ["mono", "scramble", "bolditalic", "bold", "bullet", "color", "font", "head", "italic", "langicon"];
+    private bool _forceLegacyPresentation;
     // RMC14
 
     public ChatBox()
@@ -92,9 +93,25 @@ public partial class ChatBox : UIWidget
         _controller.UpdateSelectedChannel(this);
     }
 
+    public void SetForceLegacyPresentation(bool value)
+    {
+        _forceLegacyPresentation = value;
+        ChatPanes.Visible = !value;
+        LegacyContents.Visible = value;
+        TabHeader.Visible = !value;
+    }
+
+    public void SetSplitAvailable(bool value)
+    {
+        SplitButton.Visible = value;
+    }
+
     public void Repopulate()
     {
-        Contents.Clear();
+        if (_forceLegacyPresentation)
+            LegacyContents.Clear();
+        else
+            Contents.Clear();
 
         foreach (var message in _controller.History)
         {
@@ -104,7 +121,10 @@ public partial class ChatBox : UIWidget
 
     private void OnChannelFilter(ChatChannel channel, bool active)
     {
-        Contents.Clear();
+        if (_forceLegacyPresentation)
+            LegacyContents.Clear();
+        else
+            Contents.Clear();
 
         foreach (var message in _controller.History)
         {
@@ -144,10 +164,17 @@ public partial class ChatBox : UIWidget
 
         // RMC14
         formatted = FilterProblematicTags(formatted);
-        if (_entManager.SystemOrNull<CMChatSystem>()?.TryRepetition(this, Contents, formatted, sender, unwrapped, channel, repeatCheckSender, languageIcon) ?? false)
-            return;
-
-        Contents.AddMessage(formatted);
+        if (_forceLegacyPresentation)
+        {
+            if (_entManager.SystemOrNull<CMChatSystem>()?.TryRepetition(this, LegacyContents, formatted, sender, unwrapped, channel, repeatCheckSender, languageIcon) ?? false)
+                return;
+            LegacyContents.AddMessage(formatted);
+        }
+        else
+        {
+            var msg = new ChatMessage(channel, unwrapped, message, sender, null);
+            Contents.AddMessage(msg, formatted, color);
+        }
     }
 
     // RMC14

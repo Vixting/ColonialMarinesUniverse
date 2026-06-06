@@ -1,6 +1,7 @@
 using Content.Shared._RMC14.Language.Systems;
 using Content.Shared._RMC14.Marines.Squads;
 using Content.Shared._RMC14.TacticalMap;
+using Content.Shared.Examine;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Mind;
 using Content.Shared.Popups;
@@ -24,6 +25,7 @@ public sealed partial class SkillPamphletSystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<SkillPamphletComponent, UseInHandEvent>(OnUse);
+        SubscribeLocalEvent<SkillPamphletComponent, ExaminedEvent>(OnExamined);
 
         SubscribeLocalEvent<UsedSkillPamphletComponent, GetMarineIconEvent>(OnGetMarineIcon, after: [typeof(SharedMarineSystem), typeof(SquadSystem)]);
         SubscribeLocalEvent<UsedSkillPamphletComponent, GetMarineSquadNameEvent>(OnGetSquadTitle, after: [typeof(SquadSystem)]);
@@ -146,6 +148,14 @@ public sealed partial class SkillPamphletSystem : EntitySystem
         }
 
         _popup.PopupClient(Loc.GetString("rmc-pamphlets-already-know"), ent, args.User);
+    }
+
+    private void OnExamined(Entity<SkillPamphletComponent> ent, ref ExaminedEvent args)
+    {
+        if (ent.Comp.BypassLimit)
+            return;
+
+        args.PushMarkup(Loc.GetString("rmc-pamphlets-changes-job"), 1);
     }
 
     private void OnGetMarineIcon(Entity<UsedSkillPamphletComponent> ent, ref GetMarineIconEvent args)

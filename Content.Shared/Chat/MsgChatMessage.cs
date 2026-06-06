@@ -7,6 +7,22 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared.Chat
 {
+    public enum ChatDisplayKind : byte
+    {
+        Normal,
+        Radio,
+    }
+
+    public sealed class ChatDisplayInfo
+    {
+        public string? ChannelLabel;
+        public Color? AccentColor;
+        public ChatDisplayKind Kind;
+        public string? SenderName;
+        public string? SenderPrefix;
+        public string? Verb;
+    }
+
     [Serializable, NetSerializable]
     public sealed class ChatMessage
     {
@@ -48,6 +64,9 @@ namespace Content.Shared.Chat
 
         [NonSerialized]
         public bool Read;
+
+        [NonSerialized]
+        public ChatDisplayInfo? Display;
 
         // RMC14
         public ChatMessage(ChatChannel channel, string message, string wrappedMessage, NetEntity source, int? senderKey, bool hideChat = false, Color? colorOverride = null, string? audioPath = null, float audioVolume = 0, bool hidePopup = false, bool useEmoteSpeechBubble = false, string? speechStyleClass = null, bool repeatCheckSender = true,
