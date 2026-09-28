@@ -107,19 +107,24 @@ research-data-ui-print = [color=#ffbf00][bold]Print[/bold][/color]
 
 ui-chem-simulator-window-name = Chemical Simulator
 
-research-sim-ui-credits = [bold]RESEARCH CREDITS: {$NUM}[/bold]
+research-sim-ui-header-status = Simulator status
+research-sim-ui-header-mode = Mode
+research-sim-ui-header-actions = Actions
+research-sim-ui-header-target = Target
+research-sim-ui-header-reference = Reference
+research-sim-ui-header-pick-recipe = Pick a recipe
+
+research-sim-ui-credits = RESEARCH CREDITS: {$NUM}
+research-sim-ui-status-not-ready = STATUS: NOT READY
 research-sim-ui-cost-null = ESTIMATED SIMULATING COST: NULL
 research-sim-ui-cost = ESTIMATED SIMULATING COST: {$NUM}
-research-sim-ui-target-name = TARGET NAME: {$NAME}
-research-sim-ui-ref-name = REFERENCE NAME: {$NAME}
-research-sim-ui-no-targ-chem = TARGET NAME: CHEMICAL DATA NOT INSERTED
-research-sim-ui-no-ref-chem = REFERENCE NAME: CHEMICAL DATA NOT INSERTED
 research-sim-ui-overdose = OVERDOSE LEVEL AFTER SIMULATION: {$NUM}
-research-sim-ui-no-overdose = OVERDOSE LEVEL AFTER SIMULATION:
+research-sim-ui-no-overdose = OVERDOSE LEVEL AFTER SIMULATION: NULL
 
 research-sim-ui-simulate = SIMULATE
 research-sim-ui-eject-targ = EJECT TARGET
 research-sim-ui-eject-ref = EJECT REFERENCE
+research-sim-ui-finalize = FINALIZE
 research-sim-ui-override = OVERRIDE
 research-sim-ui-override-tooltip = Disable the protection for relating conflicting properties.
 research-sim-ui-amplify = AMPLIFY
@@ -131,10 +136,10 @@ research-sim-ui-relate-tooltip = Use the reference chemical to replace one chose
 research-sim-ui-add = ADD
 research-sim-ui-add-tooltip = Use the property in the reference chemical to add a property to the target chemical, with no downsides to the target chemical, however it damages the chemical structure of reference chemical, Making any other modification impossible.
 
-research-sim-ui-no-data = [color=black][bold]No data inserted![/bold][/color]
-
-research-sim-ui-target-data = [head=3]Target Data[/head]
-research-sim-ui-reference-data = [head=3]Reference Data[/head]
-research-sim-ui-price = [bold]Price of the operation: {$COST}[/bold]
+research-sim-ui-no-data = CHEMICAL DATA NOT INSERTED
+research-sim-ui-property = {$NAME} (lvl {$LEVEL})
+research-sim-ui-price = Price of the operation: {$COST}
+research-sim-ui-selected-ref-conflict = This property conflicts with the selected reference property!
+research-sim-ui-selected-targ-conflict = This property conflicts with the selected target property!
 
 cmu-research-reduce-cooldown = -60s cooldown (1 point)
