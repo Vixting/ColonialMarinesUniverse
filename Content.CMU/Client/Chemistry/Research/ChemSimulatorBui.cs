@@ -188,7 +188,10 @@ public sealed partial class ChemSimulatorBui(EntityUid owner, Enum uiKey) : Boun
             }
 
             if (state.Costs.TryGetValue(propertyId, out var price))
-                description = string.Join('\n', description, Loc.GetString("research-sim-ui-price", ("COST", price))).Trim();
+            {
+                var priceText = Loc.GetString("research-sim-ui-price", ("COST", price));
+                description = description.Length > 0 ? description + "\n" + priceText : priceText;
+            }
 
             var conflicting = opposingSelectedId != null && conflicts.Exists(pair =>
                 pair[0] == opposingSelectedId && pair[1] == propertyId ||

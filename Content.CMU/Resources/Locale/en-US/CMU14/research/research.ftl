@@ -107,6 +107,10 @@ research-data-ui-print = [color=#ffbf00][bold]Print[/bold][/color]
 
 ui-chem-simulator-window-name = Chemical Simulator
 
+research-sim-already-inserted = A report is already inserted.
+research-sim-refused = The simulator rejects the report: it has no chemical data.
+research-sim-refuses = {CAPITALIZE(THE($SCANNER))} refuses {THE($PAPER)}.
+
 research-sim-ui-header-status = Simulator status
 research-sim-ui-header-mode = Mode
 research-sim-ui-header-actions = Actions
@@ -115,7 +119,7 @@ research-sim-ui-header-reference = Reference
 research-sim-ui-header-pick-recipe = Pick a recipe
 
 research-sim-ui-credits = RESEARCH CREDITS: {$NUM}
-research-sim-ui-status-not-ready = STATUS: NOT READY
+research-sim-ui-status-not-ready = NOT READY
 research-sim-ui-cost-null = ESTIMATED SIMULATING COST: NULL
 research-sim-ui-cost = ESTIMATED SIMULATING COST: {$NUM}
 research-sim-ui-overdose = OVERDOSE LEVEL AFTER SIMULATION: {$NUM}
