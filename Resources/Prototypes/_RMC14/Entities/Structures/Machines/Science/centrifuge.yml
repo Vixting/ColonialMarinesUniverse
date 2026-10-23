@@ -23,8 +23,9 @@
     timeToApply: 4
     structure: true
   - type: Damageable
-    damageContainer: StructuralMarine
     damageModifierSet: null
+  - type: Injurable
+    damageContainer: StructuralMarine
   - type: Destructible
     thresholds:
     - trigger:
