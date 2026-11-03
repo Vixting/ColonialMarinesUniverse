@@ -41,6 +41,8 @@ public sealed partial class XenoPheromonesOverlay : Overlay
     {
         IoCManager.InjectDependencies(this);
 
+        ZIndex = 1;
+
         _container = _entity.System<ContainerSystem>();
         _sprite = _entity.System<SpriteSystem>();
         _transform = _entity.System<TransformSystem>();
