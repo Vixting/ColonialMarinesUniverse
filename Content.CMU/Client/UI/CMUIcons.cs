@@ -6,9 +6,15 @@ public static class CMUIcons
 {
     private const string Dir = "/Textures/CMU14/Interface/Icons/";
 
+    public const string ArrowDown19 = Dir + "arrow-down-1-9.svg.192dpi.png";
+    public const string ArrowDown91 = Dir + "arrow-down-9-1.svg.192dpi.png";
+    public const string ArrowDownAZ = Dir + "arrow-down-a-z.svg.192dpi.png";
+    public const string ArrowDownZA = Dir + "arrow-down-z-a.svg.192dpi.png";
     public const string ArrowRightLong = Dir + "arrow-right-long.svg.192dpi.png";
     public const string ArrowsRotate = Dir + "arrows-rotate.svg.192dpi.png";
+    public const string Ban = Dir + "ban.svg.192dpi.png";
     public const string Book = Dir + "book.svg.192dpi.png";
+    public const string Check = Dir + "check.svg.192dpi.png";
     public const string Eject = Dir + "eject.svg.192dpi.png";
     public const string Flask = Dir + "flask.svg.192dpi.png";
     public const string FloppyDisk = Dir + "floppy-disk.svg.192dpi.png";
