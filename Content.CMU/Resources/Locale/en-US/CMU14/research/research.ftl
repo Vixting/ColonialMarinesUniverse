@@ -62,48 +62,59 @@ cmu-paper-ciph-hint-footer = - [italic]Weyland-Yutani[/italic]
 
 research-chem-terminal-update = Chemical contracts have been updated!
 
-research-data-ui-clearance = [color=#ffbf00][head=2]Clearance Level {$NUM}[/head][/color]
-research-data-ui-credits = [color=#ffbf00][head=2]Credits available: {$NUM}  ·  Sample data: {$DATA}[/head][/color]
+research-data-ui-clearance = CLEARANCE LEVEL {$NUM}
+research-data-ui-credits = Credits available: {$NUM}  ·  Sample data: {$DATA}
 
-research-data-ui-manage = Manage Research
-research-data-ui-view = View Chemicals
-
-research-data-ui-chem-name = [color=#ffbf00][head=3]{$NAME}[/head][/color]
+research-data-ui-manage-line1 = Manage
+research-data-ui-manage-line2 = Research
+research-data-ui-view-line1 = View
+research-data-ui-view-line2 = Chemicals
 
 research-data-ui-diff-hard = Hard
 research-data-ui-diff-inter = Intermediate
 research-data-ui-diff-easy = Easy
 
-research-data-ui-chem-difficulty = [color=#ffbf00][head=3]Difficulty: {$DIFF}[/head][/color]
+research-data-ui-chem-difficulty = Difficulty: {$DIFF}
+research-data-ui-recipe-hint = Early assessment shows one part of the recipe is {$NAME}
+research-data-ui-property-hint = Early testing shows property of {$NAME}
 
-research-data-ui-chem-desc = [color=#ffbf00]Early assesment shows one part of the recipe is {$RECIHINT}{"\u000a"}Early testing shows property of {$PROPHINT}[/color]
+research-data-ui-time-left = Contracts Refresh in: {$TIME}
 
-research-data-ui-time-left = [color=#ffbf00]Contracts Refresh in: {$TIME}[/color]
-
-research-data-ui-chem-take = [color=#ffbf00][head=3]Take Contract[/head][/color]
+research-data-ui-chem-take = Take Contract
 
 research-data-synthesis-name = Synthesis of {$NAME}
 
 research-data-contract-name = Contract for {$NAME}
 
-research-data-ui-analysis-scan = [color=#ffbf00][bold]Analysis[/bold][/color]
-research-data-ui-analysis-sim = [color=#ffbf00][bold]Simulation[/bold][/color]
-research-data-ui-compound-idx = [color=#ffbf00][bold]{$NAME}[/bold][/color]
+research-data-ui-analysis-scan = Analysis
+research-data-ui-analysis-sim = Simulation
 
-research-data-ui-scan-time = [color=#ffbf00][bold]Scan Time[/bold][/color]
-research-data-ui-vc-type = [color=#ffbf00][bold]Type[/bold][/color]
-research-data-ui-compound = [color=#ffbf00][bold]Compound[/bold][/color]
-research-data-ui-actions = [color=#ffbf00][bold]Actions[/bold][/color]
+research-data-ui-scan-time = Scan Time
+research-data-ui-vc-type = Type
+research-data-ui-compound = Compound
+research-data-ui-actions = Actions
+research-data-ui-hide-old = Hide Old Reports
+research-data-ui-empty = ERROR: no chemicals have been detected.
 
-research-data-ui-reprint = [color=#ffbf00][head=3]Reprint Last Contract[/head][/color]
-research-data-ui-contracts = [color=#ffbf00][head=3]Chemical Contracts[/head][/color]
-research-data-ui-scan-time-idx = [color=#ffbf00][bold]{$TIME}[/bold][/color]
-research-data-ui-improve = [color=#ffbf00][head=3]Improve: {$NUM}CR[/head][/color]
-research-data-ui-improve-locked = {"["}color=#ffbf00][head=3]X clearance in {$TIME}m[/head][/color]
+research-data-ui-reprint = Reprint
+research-data-ui-reduce-cooldown = -60s (1CR)
+research-data-ui-contracts = Chemical Contracts
+research-data-ui-contracts-empty = No contracts available.
+research-data-ui-improve = Improve ({$NUM}CR)
+research-data-ui-improve-x = Request X Access ({$NUM}CR)
+research-data-ui-improve-locked = X clearance in {$TIME}m
+research-data-ui-improve-maxed = X Access Granted
 ui-research-data-terminal-name = Research Data Terminal
 
-research-data-ui-read = [color=#ffbf00][bold]Read[/bold][/color]
-research-data-ui-print = [color=#ffbf00][bold]Print[/bold][/color]
+research-data-ui-confirm = Confirm
+research-data-ui-cancel = Cancel
+research-data-ui-confirm-improve-title = Improve Clearance
+research-data-ui-confirm-improve-text = Are you sure you want to spend {$NUM} research credits to increase the clearance immediately?
+research-data-ui-confirm-x-title = Request X Access
+research-data-ui-confirm-x-text = Are you sure you want to spend {$NUM} research credits to request X clearance access?
+
+research-data-ui-read = Read
+research-data-ui-print = Print
 
 ui-chem-simulator-window-name = Chemical Simulator
 
@@ -150,4 +161,3 @@ research-sim-ui-sim-cost = ESTIMATED SIMULATING COST: {$NUM}
 research-sim-ui-selected-ref-conflict = Conflicts with the selected reference property.
 research-sim-ui-selected-targ-conflict = Conflicts with the selected target property.
 
-cmu-research-reduce-cooldown = [color=#ffbf00][head=3]-60s 1CR[/head][/color]
